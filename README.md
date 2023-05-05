@@ -30,47 +30,56 @@ For JavaScript Code run in debugging and have ExtendScript and ExtendScript Debu
 ###Preprocessing Stage - Set up pictures for printing
 
 1. Resize digital morphs to 600 by 600 pixels using [cropResize.py]()  
+Edit Line 4 to the set of images that need to be printed
 ```
-Edit Line 4
 fileRoot = r"C:\Users\xxxx\imgs_to_resize//"
 ```
 
-2. Arrange images on page for printing - [Create Print Pages.py]
+2. Arrange images on page for printing - [Create Print Pages.py]()
+Edit Line 9 to the set of images that need to be printed
+Edit Line 10 to the location you want the Print Pages to be stored
+Edit Line 11 to fit the dataset that you are printing and image type: Bonafide or Morph
+```
+imgRoot = r"C://Users//xxxx//Dataset//imgs//"
+printPageRoot = r"C://Users//xxxx//Dataset_Print_Pages//"
+pageName = "Dataset_Morph_Print_Page_" or pageName = "Dataset_Bonafide_Print_Page_"
 ```
 
+Edit Line 54 to fit the dataset. This is for the physical page numbering system
 ```
-2i. Rename pageName variable to particular dataset line ~65  
-```
-
-```
-2. Change numbering of page to particular dataset and image type line ~107  
-```
-For Morphed Images
-“ dataset MPS”
-```
-
-```
-For Bonafide Images
-“ dataset SPS”
+# Default Line
+draw.text((2200, 3200), pageCounterStringTwo + " Data PS", (0, 0, 0), font=font)
+# Use for Morphed Images
+draw.text((2200, 3200), pageCounterStringTwo + " Data MPS", (0, 0, 0), font=font)
+# Use for Bonafide Images
+draw.text((2200, 3200), pageCounterStringTwo + " Data BPS", (0, 0, 0), font=font)
 ```
 
-###Printing Stage
-5. Launch Adobe Photoshop  
-5i. Navigate to print under File then Print with any file opened  
-5ii. Set settings to image seen [here](https://github.com/rneddojr/Face-Morphing-Research/blob/00568c74c8d94f527ac85f823047209291cebe7e/Assisting%20Images/Photoshop%20Settings/Photoshop%20Print%20Settings.png)  
-5iii. Printer profile should match paper being used. For help see [here]() 
+### Prep for Printing Stage
+3. Launch Adobe Photoshop  
+3i. Navigate to print under File then Print with any file opened  
+3ii. Set settings to image seen [here](https://github.com/rneddojr/Face-Morphing-Research/blob/00568c74c8d94f527ac85f823047209291cebe7e/Assisting%20Images/Photoshop%20Settings/Photoshop%20Print%20Settings.png)  
+You will have to modify the ICC to match the specific type of paper that is being used to print  
+For help see [here]() 
+Default for printing should be:
+```
 Canon Pro-100 <GL><PP> 1/2 Photo Paper Plus Glossy&Gold  
-6. Launch Visual Studio Code and open print.js  
-7. Send images to printer using print.js  
-7i. Start Debugging  
-7ii. Select Host Application: Adobe Photoshop  
-7iii. Navigate to Adobe Photoshop and select folder containing pages for printing  
+```
+Unless other types of paper are being used then adjust the ICC profile accordingly to match.
+
+### Begin Printing
+4. Launch Visual Studio Code and open print.js  
+4i. Run print.js with [Run --> Start Debugging)]()  
+4ii. {Select Host Application --> Adobe Photoshop]()  
+4iii. Navigate to Adobe Photoshop and select folder containing pages for printing and press select folder  
 
 ## Scanning Stage
-8. Launch Scanner Software  
-8i. Load professional mode  
-8ii Set adjustments to off (unchecked)  
-8iii. Set ICM in configuration tab to sRGB  
+
+### Prepare Scanner
+5. Launch EPSON Scan
+5i. Load [professional mode]()  
+5ii Set [adjustments to off (unchecked)]()    
+5iii. Set ICM in configuration tab to sRGB  
 Go to file configuration and assure:  
 Image type: jpg or jpeg  
 Image compression: 1, highest quality  
