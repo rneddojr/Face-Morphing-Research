@@ -16,13 +16,13 @@ Printer
 ## Software
 [Adobe Photoshop](https://helpx.adobe.com/photoshop/get-started.html)  
 [Visual Studio Code](https://code.visualstudio.com/download)  
-[PyCharm IDE](https://www.jetbrains.com/help/pycharm/installation-guide.html optional)  
+[PyCharm IDE](https://www.jetbrains.com/help/pycharm/installation-guide.html) (optional)  
 [Scanner Driver and EPSON Scan Utility](https://epson.com/Support/Scanners/Perfection-Series/Epson-Perfection-V850-Pro/s/SPT_B11B224201)  
 [Canon Pixma Pro 100 Driver](https://www.usa.canon.com/support/p/pixma-pro-100)  
 
 
 ## Requirements
-See [Requirements.txt]() for all python libraries used  
+See [Requirements.txt](https://github.com/rneddojr/Face-Morphing-Research/blob/695b36eadd654adc9eb9cf6734fb0f6177676ea8/Requirements.txt) for all python libraries used  
 For JavaScript Code run in debugging and have ExtendScript and ExtendScript Debugger on Visual Studio Code  
 
 ## Running Scripts and Processing
