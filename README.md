@@ -29,13 +29,21 @@ For JavaScript Code run in debugging and have ExtendScript and ExtendScript Debu
 
 ###Preprocessing Stage - Set up pictures for printing
 
-1. Resize digital morphs to 600 by 600 pixels using cropResize.py  
-2. Arrange images on page for printing - Create Print Pages.py  
-3. Rename pageName variable to particular dataset line ~65  
+1. Resize digital morphs to 600 by 600 pixels using [cropResize.py]()  
+```
+Edit Line 4
+fileRoot = r"C:\Users\xxxx\imgs_to_resize//"
+```
+
+2. Arrange images on page for printing - [Create Print Pages.py]
 ```
 
 ```
-4. Change numbering of page to particular dataset and image type line ~107  
+2i. Rename pageName variable to particular dataset line ~65  
+```
+
+```
+2. Change numbering of page to particular dataset and image type line ~107  
 ```
 For Morphed Images
 “ dataset MPS”
