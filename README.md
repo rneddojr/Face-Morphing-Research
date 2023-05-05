@@ -50,7 +50,8 @@ For Bonafide Images
 5. Launch Adobe Photoshop  
 5i. Navigate to print under File then Print with any file opened  
 5ii. Set setting to image seen [here]()  
-5iii. Printer profile should match paper being used. For help see [here]()  
+5iii. Printer profile should match paper being used. For help see [here]() 
+Canon Pro-100 <GL><PP> 1/2 Photo Paper Plus Glossy&Gold  
 6. Launch Visual Studio Code and open print.js  
 7. Send images to printer using print.js  
 7i. Start Debugging  
