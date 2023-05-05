@@ -49,7 +49,7 @@ For Bonafide Images
 ###Printing Stage
 5. Launch Adobe Photoshop  
 5i. Navigate to print under File then Print with any file opened  
-5ii. Set setting to image seen [here]()  
+5ii. Set settings to image seen [here](https://github.com/rneddojr/Face-Morphing-Research/blob/00568c74c8d94f527ac85f823047209291cebe7e/Assisting%20Images/Photoshop%20Settings/Photoshop%20Print%20Settings.png)  
 5iii. Printer profile should match paper being used. For help see [here]() 
 Canon Pro-100 <GL><PP> 1/2 Photo Paper Plus Glossy&Gold  
 6. Launch Visual Studio Code and open print.js  
