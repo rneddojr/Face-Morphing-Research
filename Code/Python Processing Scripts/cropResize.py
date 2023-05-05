@@ -1,9 +1,7 @@
 import os
 from PIL import Image
 
-#fileRoot = r"C:\Users\rebel\Desktop\Research_with_Liu\Ranked Morph Pages\Clarkson Dataset\E4E\I\part4_cleaned//"
-#fileRoot = r"C:\Users\rebel\Desktop\Research_with_Liu\IJCB\clarkson_e4e\821-863//"
-fileRoot = r"C:\Users\rebel\Desktop\Research_with_Liu\Clarkson_Dataset\Diffusion\morph_diffusion_cropped_resized//"
+fileRoot = r"C:\Users\xxxx\imgs_to_resize//"
 
 def resize_and_crop_images(fileRoot, filename):
     img = Image.open(fileRoot + filename)
