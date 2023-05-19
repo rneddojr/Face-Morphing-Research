@@ -111,6 +111,9 @@ Output folder is ex. FRGC_Source_Cleaned
 
 Above step is removed since a new script was developed. – batch_process.py  
 Use arg = 2 to do step above   
+```
+
+```
 scanRoot is the cropped images from crop.js  
 saveRoot is the cleaned images, Output folder is ex. FRGC_Source_Cleaned  
 
