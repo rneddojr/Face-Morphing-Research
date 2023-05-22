@@ -25,20 +25,20 @@ Printer
 See [Requirements.txt](https://github.com/rneddojr/Face-Morphing-Research/blob/695b36eadd654adc9eb9cf6734fb0f6177676ea8/Requirements.txt) for all python libraries used  
 For JavaScript Code run in debugging and have ExtendScript and ExtendScript Debugger on Visual Studio Code  
 
-## Running Scripts and Processing
+## Running Scripts and Processing  
 
-###Preprocessing Stage - Set up pictures for printing
+###Preprocessing Stage - Set up pictures for printing  
 
 1. Resize digital morphs to 600 by 600 pixels using [cropResize.py]()  
-Edit Line 4 to the set of images that need to be printed
+Edit Line 4 to the set of images that need to be printed  
 ```
 fileRoot = r"C:\Users\xxxx\imgs_to_resize//"
 ```
 
 2. Arrange images on page for printing - [Create Print Pages.py]()
-Edit Line 9 to the set of images that need to be printed
-Edit Line 10 to the location you want the Print Pages to be stored
-Edit Line 11 to fit the dataset that you are printing and image type: Bonafide or Morph
+Edit Line 9 to the set of images that need to be printed  
+Edit Line 10 to the location you want the Print Pages to be stored  
+Edit Line 11 to fit the dataset that you are printing and image type: Bonafide or Morph  
 ```
 imgRoot = r"C://Users//xxxx//Dataset//imgs//"
 printPageRoot = r"C://Users//xxxx//Dataset_Print_Pages//"
@@ -76,9 +76,9 @@ Unless other types of paper are being used then adjust the ICC profile according
 ## Scanning Stage
 
 ### Prepare Scanner
-5. Launch EPSON Scan
+5. Launch EPSON Scan  
 5i. Load [professional mode]()  
-5ii Set [adjustments to off (unchecked)]()    
+5ii Set [adjustments to off (unchecked)]()  
 5iii. Set ICM in configuration tab to sRGB  
 Go to file configuration and assure:  
 Image type: jpg or jpeg  
@@ -88,39 +88,64 @@ Scan numbering: set to the respective page number that is being scanned
 
 ## Processing Stage
 
-Separate morphs from page format - Batch Separate Morphs.py  
-The folder location is going to be the same one as where the images were saved in the scanning stage  
-Save images to a new folder ex. Dataset_Bonafide_Split or Dataset_Morph_Split  
-Delete blank images from folder  
-Cut numbers and scanner bed from images - Batch Cut Numbers.py  
-The folder location is going to be the same one as where the images were saved in the Separate morphs script  
-Save images to a new folder ex. FRGC_Source_Cut  
+5. Launch python IDE and open batch_process.py  
+Edit lines 5 through lines 13  
+```
+line 5 - line 8 uncomment
+arg = 1
+scanRoot = r"C:\Users\xxxxx\images_to_process//"
+saveRoot1 = r"C:\Users\xxxxx\images_splilt//"
+saveRoot2 = r"C:\Users\xxxxx\images_to_crop//"
 
-Above Steps are removed since a new script was developed. – batch_process.py  
-Use arg = 1 to do both steps above  
-scanRoot is the scanned images  
-saveRoot is the separated and cut images  
+and comment 
+#arg = 2
+#scanRoot = r"C:\Users\xxxxx\images_cropped//"
+#saveRoot1 = r"C:\Users\xxxxx\images_cleaned//"
+#saveRoot2 = saveRoot1
+```
+Line 5 and 10 determine which set of instructions are performed  
+scanRoot is the location of files to be processed  
+saveRoot1 is the save location of the files after the first pass  
+saveRoot1is the save location of the files after the second pass    
 
-Crop and straighten with photoshop - crop.js  
-Make a folder for cropped images to reside ex FRGC_Source_Cropped  
+6. Launch Visual Studio Code and open crop.js  
+6i. Run crop.js with [Run --> Start Debugging)]()  
+6ii. {Select Host Application --> Adobe Photoshop]()  
+6iii. Navigate to Adobe Photoshop and select folder containing pages for cropping and press select folder  
+
 Check for mis-cropped images in cropped folder - check with eyes and use sort by dimensions in file explorer  
-Isolate mis-cropped images and hand crop  
-Clean up cropped images - Batch Clean.py  
-Input folder is the cropped images from the previous step  
-Output folder is ex. FRGC_Source_Cleaned  
+Isolate mis-cropped images and hand crop images as requireed  
 
-Above step is removed since a new script was developed. – batch_process.py  
-Use arg = 2 to do step above   
+7. Launch python IDE and open batch_process.py  
+Edit lines 5 through lines 13  
 ```
+line 5 - line 8 comment
+#arg = 1
+#scanRoot = r"C:\Users\xxxxx\images_to_process//"
+#saveRoot1 = r"C:\Users\xxxxx\images_splilt//"
+#saveRoot2 = r"C:\Users\xxxxx\images_to_crop//"
 
+and uncomment 
+arg = 2
+scanRoot = r"C:\Users\xxxxx\images_cropped//"
+saveRoot1 = r"C:\Users\xxxxx\images_cleaned//"
+saveRoot2 = saveRoot1
 ```
-scanRoot is the cropped images from crop.js  
-saveRoot is the cleaned images, Output folder is ex. FRGC_Source_Cleaned  
+scanRoot is the location cropped images from crop.js  
+saveRoot is the output of the cleaned images  
 
-Renamed Images - batch rename.py  
-Files for naming are from the original source images  
-Copy and rename the cleaned folder from the previous step to FRGC_Source_Renamed  
-Input folder fileRoot is the FRGC_Source_Renamed that was just made  
-Resize Images - batch rename.py  
-Copy and rename the renamed folder from the previous step to FRGC_Source_Resized  
-Input folder fileRoot is the FRGC_Source_Resized that was just made  
+8. Launch python IDE and open Batch Rename.py   
+Edit lines 3 and 4
+```
+fileRoot = r"C:\Users\xxxx\files_to_rename//"
+nameRoot = r"C:\Users\xxxx\original_files//"
+```
+nameRoot is the original files and are ufor naming are from the original source images  
+Copy and rename the cleaned folder from the previous step to dataset_Renamed  
+
+9. Launch python IDE and open cropResize.py  
+Edit line 4
+```
+fileRoot = r"C:\Users\xxxx\imgs_to_resize//"
+```
+Copy and rename the renamed folder from the previous step to dataset_Resized  
