@@ -27,7 +27,7 @@ For JavaScript Code run in debugging and have ExtendScript and ExtendScript Debu
 
 ## Running Scripts and Processing  
 
-###Preprocessing Stage - Set up pictures for printing  
+### Preprocessing Stage - Set up pictures for printing
 
 1. Resize digital morphs to 600 by 600 pixels using [cropResize.py]()  
 Edit Line 4 to the set of images that need to be printed  
