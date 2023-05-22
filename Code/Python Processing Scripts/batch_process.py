@@ -2,17 +2,15 @@ import os
 from PIL import Image
 
 #If arg = 1 do pre-crop, if arg = 2 do post-crop
-#arg = 1
-#scanRoot = r"C:\Users\rebel\Desktop\Research_with_Liu\Ranked Morph Pages\Clarkson Dataset\E4E\I\start//"
-#saveRoot1 = r"C:\Users\rebel\Desktop\Research_with_Liu\Ranked Morph Pages\Clarkson Dataset\E4E\I\start_split//"
-#saveRoot2 = r"C:\Users\rebel\Desktop\Research_with_Liu\Ranked Morph Pages\Clarkson Dataset\E4E\I\start_to_crop//"
+arg = 1
+scanRoot = r"C:\Users\xxxxx\images_to_process//"
+saveRoot1 = r"C:\Users\xxxxx\images_splilt//"
+saveRoot2 = r"C:\Users\xxxxx\images_to_crop//"
 
-#scanRoot = r"C:\Users\rebel\Desktop\Research_with_Liu\Ranked Morph Pages\Clarkson Dataset\E4E\I\RPS//"
-
-arg = 2
-scanRoot = r"C:\Users\rebel\Desktop\Research_with_Liu\Ranked Morph Pages\Clarkson Dataset\E4E\I\part4_cropped//"
-saveRoot1 = r"C:\Users\rebel\Desktop\Research_with_Liu\Ranked Morph Pages\Clarkson Dataset\E4E\I\part4_cleaned//"
-saveRoot2 = saveRoot1
+#arg = 2
+#scanRoot = r"C:\Users\xxxxx\images_cropped//"
+#saveRoot1 = r"C:\Users\xxxxx\images_cleaned//"
+#saveRoot2 = saveRoot1
 
 
 # Check whether the specified path exists or not
