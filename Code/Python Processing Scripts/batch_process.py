@@ -4,6 +4,7 @@ from PIL import Image
 #If arg = 1 do pre-crop, if arg = 2 do post-crop
 arg = 1
 scanRoot = r"C:\Users\xxxxx\images_to_process//"
+saveRoot0 = r"C\Users\xxxxx\scans_adjusted//"
 saveRoot1 = r"C:\Users\xxxxx\images_splilt//"
 saveRoot2 = r"C:\Users\xxxxx\images_to_crop//"
 
@@ -11,6 +12,7 @@ saveRoot2 = r"C:\Users\xxxxx\images_to_crop//"
 #scanRoot = r"C:\Users\xxxxx\images_cropped//"
 #saveRoot1 = r"C:\Users\xxxxx\images_cleaned//"
 #saveRoot2 = saveRoot1
+#saveRoot0 = ""
 
 
 # Check whether the specified path exists or not
@@ -28,7 +30,7 @@ def precrop_image(scanRoot, file, crop_bottom):
     image = Image.open(scanRoot+file)
     pre_width, pre_height = image.size
     cropped = image.crop((0, 0, pre_width, pre_height - crop_bottom))
-    cropped.save(scanRoot+file, quality=100)
+    cropped.save(saveRoot0+file, quality=100)
 
     
 def separate(original_location, filename, xPieces, yPieces, save_location):
@@ -101,7 +103,7 @@ def main():
             xPieces = 3
             yPieces = 4
             precrop_image(scanRoot, file, 50)
-            separate(scanRoot, file, xPieces, yPieces, saveRoot1)
+            separate(saveRoot0, file, xPieces, yPieces, saveRoot1)
             countOne += 1
 
         print("Cutting Numbers")
