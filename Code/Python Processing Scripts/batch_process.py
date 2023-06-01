@@ -23,12 +23,14 @@ def checkExists(path):
     else:
         print("The directory exists!")
 
-def precrop_image(scanroot, file, crop_bottom):
-    image = Image.open(scanroot+file)
+        
+def precrop_image(scanRoot, file, crop_bottom):
+    image = Image.open(scanRoot+file)
     pre_width, pre_height = image.size
     cropped = image.crop((0, 0, pre_width, pre_height - crop_bottom))
-    cropped.save(scanroot+file, quality=100)
+    cropped.save(scanRoot+file, quality=100)
 
+    
 def separate(original_location, filename, xPieces, yPieces, save_location):
     separate_input = original_location + filename
     imgname, file_extension = os.path.splitext(filename)
