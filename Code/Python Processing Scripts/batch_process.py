@@ -93,8 +93,10 @@ def main():
     countTwo = 1
 
     if arg == 1:
+        path0 = saveRoot0
         path = saveRoot1
         path2 = saveRoot2
+        checkExists(path0)
         checkExists(path)
         checkExists(path2)
         print("Separating Images")
